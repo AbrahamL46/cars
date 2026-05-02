@@ -19,7 +19,8 @@ class Square extends Component
                 borderWidth: 1,
                 borderColor: '#666666',
                 borderStyle: 'solid',
-                position: 'absolute'
+                position: 'absolute',
+                zIndex: 1
         };
         return ( <div style={myStyle} /> );
 
