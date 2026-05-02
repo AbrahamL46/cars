@@ -1,6 +1,6 @@
 // /src/components/Square.jsx
 import React, {Component} from "react";
-import {GRID} from "C:/Users/abrah/cars/src/utils/constants.js";
+import {GRID} from "../utils/constants.js";
 
 // This component expects the props:
 //      x, y -- upper left corner of the component
