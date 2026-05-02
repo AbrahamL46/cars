@@ -32,8 +32,26 @@ class BoardView extends Component
                 list.push(<Square key={key++} x={cx} y={cy} />);
             }
         }
-        list.push(<CarView key={key++} x={GRID} y={2*GRID}
-            wid={2*GRID} hgt={GRID} color={'red'} />);
+        
+        const cars = this.props.cars;
+        const num = cars.getNumCars();
+        for (let i = 0; i < num; i++)
+        {
+            const { id, x, y, ncols, nrows, color } = cars.getCar(i);
+
+            list.push(
+                <CarView
+                    key={key++}
+                    x={x*GRID}
+                    y={y*GRID}
+                    wid={ncols*GRID}
+                    hgt={nrows*GRID}
+                    color={color}
+                    idNum={id}
+                    cars={this.props.cars}
+                />
+            );
+        }
         
         return (
             <div style={bStyle}>{list}</div>
